@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Recipes App</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Your Recipes</h1>
     <div class="searchForm">
-         <input id="search-input" type="text" placeholder="Search ingredient">
-         <button id="search-btn">Search</button>
+      <input id="search-input" type="text" placeholder="Search ingredient" />
+      <button id="search-btn">Search</button>
     </div>
-    <div id="recipes-container">
-
-    </div>
+    <div id="recipes-container"></div>
 
     <script id="recipe-template" type="text/x-handlebars-template">
-        {{#each recipes}}
-        <div class="recipe">
-            <a href="{{href}}"><h3>{{title}}</h3></a>
-            <img src="{{thumbnail}}">
-            <ul>
-                {{#each ingredients}}
-                <li>{{ this }}</li>
-                {{/each}}
-            </ul>
+      {{#each recipes}}
+        <div id="recipe" data-id="{{title}}" class="recipe">
+          <a href="{{href}}"><h3>{{title}}</h3></a>
+          <img src="{{thumbnail}}" />
+          <p>ingredients: </p>
+
+          <ul>
+            {{#each ingredients}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+
         </div>
-        {{/each}}
+      {{/each}}
     </script>
 
     <script src="./handlebars/dist/handlebars.js"></script>
     <script src="./jquery/dist/jquery.js"></script>
     <script src="Renderer.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

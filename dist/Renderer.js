@@ -1,8 +1,5 @@
 class Renderer{
-   constructor(){
-
-   }
-
+  
    render(recipes){
     const RECIPES_CONTAINER = $("#recipes-container");
     const RECIPES_SOURCE = $("#recipe-template");
